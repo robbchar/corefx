@@ -6,4 +6,4 @@ OSS Signing is very similar to [delay signing](http://msdn.microsoft.com/en-us/l
 
 When running on the full .NET Framework we only support using OSS Signed assemblies for debugging and testing purposes. Microsoft does not guarantee that you can successfully load OSS Signed assemblies in all scenarios that are required for production use.
 
-However, in the context of ASP.NET 5 on .NET Core, or .NET Native Microsoft supports using OSS Signed assemblies for production uses. Make note, however, that while ability to load OSS Signed binaries is supported on these platforms, the API and contents of the assembly itself is unsupported (due to it being privately built).
+However, in the context of ASP.NET 5 on .NET Core, or .NET Native, Microsoft supports using OSS Signed assemblies for production uses. Make note, however, that while ability to load OSS Signed binaries is supported on these platforms, the API and contents of the assembly itself is unsupported (due to it being privately built).
