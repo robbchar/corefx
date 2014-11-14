@@ -11,7 +11,7 @@ For the most part, the majority of applications and libraries do not need strong
 
 Strong names are still required in some rare situations, most of which are called out on this page: [Strong-Named Assemblies](http://msdn.microsoft.com/en-us/library/wd40t7ad.aspx).
 
-### 2. Why kinds of problems do I run into after strong naming?
+### 2. What kinds of problems do I run into after strong naming?
 There are really two major problems that developers run into after strong naming their assemblies:
 
 1. _Virality_. Once you've strong named an assembly, you can only statically reference other strong named assemblies. 
