@@ -1,6 +1,6 @@
 All .NET Core assemblies are [strong-named](http://msdn.microsoft.com/en-us/library/wd40t7ad.aspx). We do this for two reasons:
 
-1. _Compatibility_. We want to maintain type identity with previous versions of our assemblies that have shipped across various versions of our platforms. Removing a strong-name from an assembly is a breaking change, and would break the ability to consume and run libraries built against the old identities.
+1. _Compatibility_. We want to maintain type identity with previous versions of our assemblies that have shipped across various versions of our platforms. Removing a strong-name from an assembly is a breaking change, and would break the ability to consume and run libraries built against the previous identities.
 
 2. _Serviceability_. When running on .NET Framework some of .NET Core assemblies ship locally ("app-local") with the application, this is in contrast to other framework assemblies that are placed in the [GAC](http://msdn.microsoft.com/en-us/library/yf1d93sz.aspx)). To continue to be able to service these libraries for critical security updates, we make use of the [app-local servicing](http://blogs.msdn.com/b/dotnet/archive/2014/01/22/net-4-5-1-supports-microsoft-security-updates-for-net-nuget-libraries.aspx) feature which requires that assemblies have strong names.
 
