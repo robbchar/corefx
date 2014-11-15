@@ -1,18 +1,16 @@
-# Developer Guide
-
-## Building, Testing, and Running
+# Building, Testing, and Running
 
 You can build .NET Core either via the command line or by using Visual Studio.
 We currently only support building and running on Windows. Other platforms will
 come later.
 
-### Required Software
+## Required Software
 
 Install [Visual Studio 2013 Desktop Express with Update 3](http://www.microsoft.com/en-us/download/details.aspx?id=43733) 
 or [Visual Studio Community 2013](http://go.microsoft.com/fwlink/?LinkId=517284).
 You can also use the [Visual Studio 2015 Preview] (http://www.microsoft.com/en-us/download/details.aspx?id=44934).
 
-### Building From the Command Line
+## Building From the Command Line
 
 Open a [Visual Studio Command Prompt](http://msdn.microsoft.com/en-us/library/ms229859(v=vs.110).aspx). 
 From the root of the repository, type `build`. This will build everything and run
@@ -20,7 +18,7 @@ the core tests for the project. Visual Studio Solution (.sln) files exist for
 related groups of libraries. These can be loaded to build, debug and test inside
 the Visual Studio IDE.
 
-### Running Tests
+## Running Tests
 
 We use the OSS testing framework [xUnit.net][xunit].
 
