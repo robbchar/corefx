@@ -7,8 +7,10 @@ come later.
 ## Required Software
 
 Visual Studio 2013 (Update 3 or later) or Visual Studio 2015 (Preview or later) is required.
+
+The following free downloads are compatible:
 * [Visual Studio Community 2013](http://www.visualstudio.com/en-us/visual-studio-community-vs.aspx)
-* [Visual Studio 2015 Preview](http://www.microsoft.com/en-us/download/details.aspx?id=44934)
+* [Visual Studio Ultimate 2015 Preview](http://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs)
 
 ## Building From the Command Line
 
