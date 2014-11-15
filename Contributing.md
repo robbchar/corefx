@@ -25,12 +25,12 @@ We are striving to bring dotnet/corefx in to full conformance with the style gui
 described above. We have built some automation for that and will work to bring everything
 in line. In the meantime, please:
 
-* **DON'T** send PRs for style changes. We'd rather handle them holistically and they are tough
+* **DO NOT** send PRs for style changes. We'd rather handle them holistically and they are tough
 to review and merge.
 
 * **DO** give priority to the current style of the project or file you're changing even if it
 diverges from the general guidelines.
 
 ### Licensing
-* **DO** not sumbit PRs that alter licensing related files or headers. If you believe there's a
+* **DO NOT** sumbit PRs that alter licensing related files or headers. If you believe there's a
 problem with them, file an issue and let us take care of it.
