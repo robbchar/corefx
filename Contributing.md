@@ -30,3 +30,7 @@ to review and merge.
 
 * **DO** give priority to the current style of the project or file you're changing even if it
 diverges from the general guidelines.
+
+### Licensing
+* **DO** not sumbit PRs that alter licensing related files or headers. If you believe there's a
+problem with them, file an issue and let us take care of it.
