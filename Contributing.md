@@ -22,7 +22,7 @@ encounter is a great way to contribute too!
 
 ### Style
 We are striving to bring dotnet/corefx in to full conformance with the style guidelines
-described above.We have built some automation for that and will work to bring everything
+described above. We have built some automation for that and will work to bring everything
 in line. In the meantime, please
 
 * **DON'T** send PRs for style changes. We'd rather handle them holistically and they are tough
