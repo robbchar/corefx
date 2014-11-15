@@ -6,7 +6,7 @@ pull requests, and more.
 
 [Contributing Guide]: https://github.com/Microsoft/dotnet/blob/master/CONTRIBUTING.md
 
-## Additional Guidelines for contributions to dotnet/corefx
+## Additional Guidelines for dotnet/corefx
 
 ### Issues
 You do not need to file an issue for trivial changes (e.g. typo fixes). Just send us
