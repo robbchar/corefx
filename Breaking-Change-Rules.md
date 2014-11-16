@@ -1,5 +1,3 @@
-## Unacceptable Changes
-
 ### Unacceptable Behavioral Changes
 
 **Out Parameters and Return Values**
