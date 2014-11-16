@@ -16,7 +16,7 @@ _Backwards compatibility_ refers to the ability of an existing consumer of an AP
 
 Changes that affect backwards compatibility are strongly discouraged. All alternates should be actively considered, since developers will, by default, expect backwards compatibility in newer versions of an API.
 
-**Forwards Compatibility**
+**Forwards Compatibility**  
 Forwards compatibility is the exact reverse of backwards compatibility; it refers to the ability of an existing consumer of an API to run against, and behave in the way against a _older_ version. By definition, if a consumer is not able to run, or behaves differently against an older version of the API, then the API is said to be _forwards incompatible_.
 
 Changes that affect forwards compatibility are generally less pervasive, and there is not as stringent a demand to ensure that such changes are not introduced. Customers accept that a consumer which relies upon a newer API, may not function correctly against the older API.
