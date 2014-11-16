@@ -61,5 +61,46 @@ This document does not attempt to detail forwards incompatibilities.
 * Changing the order in which events are fired. Developers can reasonably expect events to fire in the same order.
 * Removing the raising of an event on a given action
 * Changing a synchronous API to asynchronous (and vice versa)
+* Firing an existing event when it was never fired before
+* Changing the number of times given events are called
+
+### Unacceptable Binary and Source Compatibility changes
+
+**Type Attribute and Modifier Changes**
+* Adding the `sealed` or `abstract` keyword to a type. However, it is not breaking when:
+  * There are no accessible (public or protected) constructors
+* Reducing the visibility of a type
+* Removing the implementation of an interface on a class. However, it is not breaking when:
+  * If you added the implementation of an interface which derives from the removed interface. For example, you removed `IDisposable`, but implemented `IComponent`, which derives from `IDisposable`.
+  * The interface is already implemented lower in the hierarchy.
+* Remove an attribute, or changing values of an attribute. However, it is not breaking when:
+  * These values are not observable by consumers, such as `EditorBrowsable`.
+
+**Type Signature Changes**
+* Changing the base class for a class. However, it is not breaking when:
+  * The new base class is more derived from the original base class, -and- the new base class does not shadow any of the members of the original base class.
+* Changing the name of a type
+
+**Namespace Changes**
+* Moving a type to a new namespace
+* Removing a type from a namespace in which it resided
+
+**Assembly Changes**
+* Changing the name of an assembly
+
+**Location Changes**
+* Moving a type from one assembly into another assembly. However, it is not breaking when:
+  * The old assembly is marked with `TypeForwardedToAttribute` pointing to the new location
+
+**Member Changes**
+* Adding a member to an interface
+* Adding an abstract member to a public type. However, it is not breaking when:
+  * There are no accessible (public or protected) constructors
+  * The type is sealed
+* Adding a constructor to a class which previously had no constructor, without also adding the default constructor
+* Adding an overload that precludes an existing overload, and defines different behavior.
+  * This will break existing clients that were bound to the previous overload. For example, if you have a class that has a single version of a method that accepts a UInteger, an existing client will successfully bind to that overload, if simply passing an Integer value. However, if you add an overload that to this method that accepts an Integer, recompiling the application will now bind to the new overload. If different behavior results, then this is a breaking change.
+
+
 
 
