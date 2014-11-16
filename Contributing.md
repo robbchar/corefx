@@ -34,3 +34,6 @@ diverges from the general guidelines.
 ### Licensing
 * **DO NOT** submit PRs that alter licensing related files or headers. If you believe there's a
 problem with them, file an issue and let us take care of it.
+
+### Compatibility
+Please review the page about [Breaking Changes] before making changes.
