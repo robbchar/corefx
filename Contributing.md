@@ -36,4 +36,4 @@ diverges from the general guidelines.
 problem with them, file an issue and let us take care of it.
 
 ### Compatibility
-Please review the page about [Breaking Changes] before making changes.
+Please review the page about [Breaking Changes](Breaking Changes) before making changes.
