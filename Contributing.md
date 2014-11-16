@@ -8,7 +8,7 @@ pull requests, and more.
 
 ## Additional Guidelines for dotnet/corefx
 
-### Commit Message Formatting
+### Commits 
 Please format commit messages as follows:
 
 ```
@@ -22,6 +22,12 @@ and indicate which issue is fixed in the specific format below.
 
 Fix #42
 ```
+
+Also do your best to factor commits appropriately, i.e not too large with unrelated
+things in the same commit, and not too small with the same small change applied N
+times in N different commits. If there was some accidental reformatting or whitespace
+changes during the course of your commits, please rebase them away before submitting
+the PR.
 
 ### Issues
 You do not need to file an issue for trivial changes (e.g. typo fixes). Just send us
