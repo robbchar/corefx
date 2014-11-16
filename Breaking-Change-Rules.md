@@ -101,6 +101,51 @@ This document does not attempt to detail forwards incompatibilities.
 * Adding an overload that precludes an existing overload, and defines different behavior.
   * This will break existing clients that were bound to the previous overload. For example, if you have a class that has a single version of a method that accepts a UInteger, an existing client will successfully bind to that overload, if simply passing an Integer value. However, if you add an overload that to this method that accepts an Integer, recompiling the application will now bind to the new overload. If different behavior results, then this is a breaking change.
 
+**Member Removals**
+* Removing a public member. However, it is not breaking when:
+  * The member is moved onto a class higher in the hierarchy tree of the type from which it was removed.
+* Renaming a public member
+* Reducing the scope of a member. However, it is not breaking when the member is protected and:
+  * There are no accessible (public or protected) constructors
+  * The type is sealed
+
+**Member Signature Changes**
+* Changing the type of a property or field to an unrelated type
+* Changing a property type to a wider type, when that property has a get accessor
+* Adding the readonly keyword to a field
+* Removing the getter or setter from a property
+* Removing an element from an enum
+* Adding an enum value to an enum
+* Adding the FlagsAttribute to an enum
 
 
+**Parameter Type Changes**
+* Changing a passed parameter type to an unrelated (no inheritance relationship) type
+* Changing a parameter type from a base class to an inherited class
 
+**Parameters**
+* Adding a new parameter 
+* Removing a parameter 
+* Renaming a parameter (including case). This is considered breaking for two reasons:
+  * It breaks late-bound scenarios, such as Visual Basic's late-binding feature and C#'s `dynamic`
+  * It breaks source compatibility when developers use [named parameters](http://msdn.microsoft.com/en-us/library/dd264739.aspx).
+* Changing the order of the parameters on an API
+* Changing the order of the parameters on an API 
+* Adding or removing the `params` keyword to a parameter
+* Adding or removing `out` or `ref` keywords to a parameter
+* Changing a parameter modifier from `ref` to `out`, or vice versa.
+  * These are source incompatible rather than not binary incompatible changes.
+* Increasing the range of accepted values within a given parameter, and the member is virtual
+  * This is considered breaking since any overridden members will now not function properly, for the extended range of values
+
+**Return Type Changes**
+* Changing the return type to an unrelated (no inheritance relationship) type
+* Changing the return type from an inherited class to a base class					
+
+**Member Modifier Changes**
+* Adding or removing the `abstract` keyword to a member. However, it is not breaking when:
+  * Removing `abstract` and adding the `virtual` keyword
+* Removing the `virtual` keyword from a member
+* Adding or removing the `static` keyword from a member
+* Removing an attribute applied to a member
+  * Although this item can be addressed on a case to case basis, removing an attribute will often be breaking. An example is the NonSerializedAttribute
