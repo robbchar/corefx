@@ -31,7 +31,7 @@ This document does not attempt to detail forwards incompatibilities.
 **Out Parameters and Return Values**
 * Increasing the range of returned values for the return value
 * Changing the precision of a numerical return value
-* Changing a return value, such as as the value returned from ToString
+* Changing a return value, such as as the value returned from ToString. If you had an API which returned a value from 0-10, but actually intended to divide the value by two and forgot (return only 0-5) then changing the return to now give the correct value is a breaking change.
 
 **In Parameters**
 * Decreasing the range of accepted values within a given parameter, such as change in parsing of input and throwing new errors (even if parsing behavior is not specified in the docs)
@@ -61,6 +61,5 @@ This document does not attempt to detail forwards incompatibilities.
 * Changing the order in which events are fired. Developers can reasonably expect events to fire in the same order.
 * Removing the raising of an event on a given action
 * Changing a synchronous API to asynchronous (and vice versa)
-
 
 
