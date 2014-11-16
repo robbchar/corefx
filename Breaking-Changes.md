@@ -32,7 +32,7 @@ Examples:
 
 These require judgment: how predictable, obvious, consistent was the behavior?
 
-##Bucket 3: Unlikely Grey Area
+### Bucket 3: Unlikely Grey Area
 *Change of behavior that customers could have depended on, but probably wouldn't.*
 
 **Examples:**
@@ -40,7 +40,7 @@ These require judgment: how predictable, obvious, consistent was the behavior?
 
 As with type 2 changes, these require judgment: what is reasonable and what’s not?
 
-## Bucket 4: Clearly Non-Public
+### Bucket 4: Clearly Non-Public
 *Changes to surface area or behavior that is clearly internal or non-breaking in theory, but breaks an app.*
 
 **Examples:**
@@ -50,7 +50,7 @@ It is impossible to evolve a code base without making such changes, so we don't 
 
 This bucket is painful for the machine-wide .NET Framework, but we do have much more latitude here in .NET Core.
 
-## What This Means for Contributors
+### What This Means for Contributors
 * All bucket 1, 2, and 3 breaking changes require talking to the repo owners first.
 * If you're not sure in which bucket applies to a given change, contact us as well.
 * It doesn't matter if the old behavior is "wrong", we still need to think through the implications.
