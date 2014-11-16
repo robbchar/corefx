@@ -3,6 +3,7 @@
  * [Contributing](Contributing)
  * [Strong Naming](Strong Naming)
  * [OSS Signing](OSS Signing)
+ * [Breaking Changes](Breaking Changes)
 
 
 
