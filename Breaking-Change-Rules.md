@@ -48,7 +48,7 @@ This document does not attempt to detail forwards incompatibilities.
 * Throwing a new exception. However, it is not breaking when:
   * The exception applies only to a new code-path which can only be involved by a call with new parameter values, or state (that couldn't hit by existing code targeting the previous version)
   * You throw a more derived exception than an existing exception. For example, `CultureInfo.GetCultureInfo(String)` used to throw `ArgumentException` in .NET Framework 3.5. In .NET Framework 4.0, this was changed to throw `CultureNotFoundException` which derives from `ArgumentException`, and therefore is an acceptable change. 
-  * You are currently throwing `NotSupportedException`, `NotImplementedException` or an exception that is considered unrecoverable. Unrecoverable exceptions should not be getting caught and will be dealt with on a broad level or by a high-level catch-all handler. Therefore, users are not expected to have code that catches these explicit exceptions. The list of unrecoverable exceptions are:
+  * You are currently throwing `NotSupportedException`, `NotImplementedException`, 'NullReferenceException' or an exception that is considered unrecoverable. Unrecoverable exceptions should not be getting caught and will be dealt with on a broad level or by a high-level catch-all handler. Therefore, users are not expected to have code that catches these explicit exceptions. The list of unrecoverable exceptions are:
      * `StackOverflowException`
      * `SEHException`
      * `ExecutionEngineException`
@@ -56,6 +56,11 @@ This document does not attempt to detail forwards incompatibilities.
 * Removing an exception that was being throw. However, it is not breaking when:
   * The API allows more robust behavior. For example, a Divide method which only worked on positive values, but threw an exception otherwise, can be changed to support all values and the exception is no longer thrown.
 
+**Code Changes**
+* Adding the `checked` keyword to a code-block. This may cause code in a block to to begin to throwing exceptions, an unacceptable change.
+* Changing the order in which events are fired. Developers can reasonably expect events to fire in the same order.
+* Removing the raising of an event on a given action
+* Changing a synchronous API to asynchronous (and vice versa)
 
 
 
