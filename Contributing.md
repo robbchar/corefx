@@ -8,7 +8,7 @@ pull requests, and more.
 
 ## Additional Guidelines for dotnet/corefx
 
-## Commit Message Formatting
+### Commit Message Formatting
 Please format commit messages as follows:
 
 ```
