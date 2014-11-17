@@ -56,5 +56,8 @@ diverges from the general guidelines.
 * **DO NOT** submit PRs that alter licensing related files or headers. If you believe there's a
 problem with them, file an issue and let us take care of it.
 
+### API Additions
+* **DO NOT** add API additions without filing an issue and discussing with us first.
+
 ### Compatibility
 Please review the page about [Breaking Changes](Breaking Changes) before making changes.
