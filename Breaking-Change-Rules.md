@@ -1,19 +1,19 @@
 ## Behavioral Changes
 ### Platform Support Changes
 
-&#10003; **Acceptable Changes**
+&#10003; **Allowed**
 * An operation previously not supported on a specific platform, is now supported
 
-&#10007; **Unacceptable Changes**
+&#10007; **Disallowed**
 * An operation previously supported on a specific platform is no longer supported, or now requires a specific service-pack
 
 ### Parameters and Return Values
-&#10003; **Acceptable Changes**  
+&#10003; **Allowed**  
 * _Increasing_ the range of accepted values for a given parameter if the member is not `virtual`
 
 * Returning a more derived type for a return or `out` value
 
-&#10007; **Unacceptable Changes**  
+&#10007; **Disallowed**  
 * _Increasing_ the range of accepted values for a given parameter and the member is `virtual`   
 > This is breaking because any overridden members will now not function correctly for the extended range of values.
 
@@ -25,10 +25,10 @@
 * Changing the precision of a numerical return value
 
 ### Property/Field Changes 
-&#10003; **Acceptable Changes**
+&#10003; **Allowed**
 * Returning a more derived type for a field or property
 
-&#10007; **Unacceptable Changes**  
+&#10007; **Disallowed**  
 * Changing the value of a public or protected field
 * Changing the default value for a property
 * Changing the value of an enum member
