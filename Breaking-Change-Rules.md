@@ -1,18 +1,28 @@
-### Unacceptable Behavioral Changes
+## Behavioral Changes
+### Platform Support Changes
 
-**Out Parameters and Return Values**
-* Increasing the range of returned values for the return value
-* Changing the precision of a numerical return value
-* Changing a return value, such as as the value returned from ToString. If you had an API which returned a value from 0-10, but actually intended to divide the value by two and forgot (return only 0-5) then changing the return to now give the correct value is a breaking change.
+&#10003; **Acceptable Changes**
+* An operation previously not supported on a specific platform, is now supported
 
-**In Parameters**
-* Decreasing the range of accepted values within a given parameter, such as change in parsing of input and throwing new errors (even if parsing behavior is not specified in the docs)
-
-**Platform Support Changes**
+&#10007; **Unacceptable Changes**
 * An operation previously supported on a specific platform is no longer supported, or now requires a specific service-pack
 
+### Parameters and Return Values
+&#10003; **Acceptable Changes**  
+* _Increasing_ the range of accepted values for a given parameter if the member is not `virtual`
+
+&#10007; **Unacceptable Changes**  
+* _Increasing_ the range of accepted values for a given parameter and the member is `virtual`   
+> This breaking because any overridden members will now not function properly for the extended range of values.  
+
+* _Increasing_ the range of values for a return or `out` value
+* _Decreasing_ the range of accepted values within a given parameter, such as change in parsing of input and throwing new errors (even if parsing behavior is not specified in the docs)
+* Changing the precision of a numerical return value
+* Changing a return value, such as the value returned from ToString   
+    * If you had an API which returned a value from 0-10, but actually intended to divide the value by two and forgot (return only 0-5) then changing the return to now give the correct value is a breaking 
+
 **Property/Field Changes**
-* Changing the value of a public or protected field
+&nbsp;&nbsp;&nbsp;&#10007; Changing the value of a public or protected field
 * Changing the default value for a property
 * Changing the value of an enum member
 
