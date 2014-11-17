@@ -35,7 +35,7 @@
      * `ExecutionEngineException`
      * `AccessViolationException`
 
-* Throwing a new exception that only applies to a new code-path which can only be observed with new parameter values, or state (that couldn't hit by existing code targeting the previous version)
+* Throwing a new exception that only applies to a ode-path which can only be observed with new parameter values, or state (that couldn't hit by existing code targeting the previous version)
 
 * Removing an exception that was being thrown when the API allows more robust behavior or enables new scenarios  
 > For example, a Divide method which only worked on positive values, but threw an exception otherwise, can be changed to support all values and the exception is no longer thrown.
