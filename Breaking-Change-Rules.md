@@ -86,7 +86,7 @@
 
 ### Types
 &#10003; **Allowed**
-* Adding the `sealed` or `abstract` keyword to a type when there are _no_ accessible (public or protected) constructors
+* Adding the `sealed` or `abstract` keyword to a type when there are _no accessible_ (public or protected) constructors
 
 * Increasing the visibility of a type
 
@@ -103,7 +103,7 @@
 > The old assembly must be marked with `TypeForwardedToAttribute` pointing to the new location
 
 &#10007; **Disallowed**
-* Adding the `sealed` or `abstract` keyword to a type when there _are_ accessible (public or protected) constructors
+* Adding the `sealed` or `abstract` keyword to a type when there _are accessible_ (public or protected) constructors
 
 * Decreasing the visibility of a type
 
@@ -125,13 +125,13 @@
 
 ### Member Changes
 &#10003; **Allowed**
-* Adding an abstract member to a public type when there are _no_ accessible (`public` or `protected`) constructors, or the type is `sealed`
+* Adding an abstract member to a public type when there are _no accessible_ (`public` or `protected`) constructors, or the type is `sealed`
 
 * Moving a member onto a class higher in the hierarchy tree of the type from which it was removed
 
 * Increasing the visibility of a member that is not `virtual`
 
-* Decreasing the visibility of a member when there are _no_ accessible (`public` or `protected`) constructors or the type is `sealed`
+* Decreasing the visibility of a member when there are _no accessible_ (`public` or `protected`) constructors or the type is `sealed`
 
 * Changing a member from `abstract` to `virtual`
 
@@ -143,7 +143,7 @@
 &#10007; **Disallowed**
 * Adding an member to an interface
 
-* Adding an abstract member to a type when there _are_ accessible (`public` or `protected`) constructors and the type is not `sealed`
+* Adding an abstract member to a type when there _are accessible_ (`public` or `protected`) constructors and the type is not `sealed`
 
 * Adding a constructor to a class which previously had no constructor, without also adding the default constructor
 
@@ -153,7 +153,7 @@ successfully bind to that overload, if simply passing an `int` value. However, i
 
 * Removing or renaming a member, including a getter or setter from a property or enum members
 
-* Decreasing the visibility of a member when there _are_ accessible (`public` or `protected`) constructors and the type is not `sealed`
+* Decreasing the visibility of a member when there _are accessible_ (`public` or `protected`) constructors and the type is not `sealed`
 
 * Adding or removing `abstract` from a member
 
@@ -189,11 +189,11 @@ successfully bind to that overload, if simply passing an `int` value. However, i
 
 ### Attribute Changes
 &#10003; **Allowed**
-* Changing the value of an attribute that is _not_ observable
+* Changing the value of an attribute that is _not observable_
 
 &#10007; **Disallowed**
 
 * Removing an attribute  
 > Although this item can be addressed on a case to case basis, removing an attribute will often be breaking. For example, `NonSerializedAttribute`
 
-* Changing values of an attribute that _is_ observable
+* Changing values of an attribute that _is observable_
