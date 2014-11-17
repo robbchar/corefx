@@ -11,9 +11,10 @@
 > This is breaking because any existing overridden members will now not function correctly for the extended range of values.
 
 * Decreasing the range of accepted values for a property or parameter, such as a change in parsing of input and throwing new errors (even if parsing behavior is not specified in the docs)
-* Increasing the range of output values for a property, field, return or `out` value
 
-* Changing a output value for a property, field, return or 'out' value, such as the value returned from `ToString`
+* Increasing the range of returned values for a property, field, return or `out` value
+
+* Changing the returned values for a property, field, return or 'out' value, such as the value returned from `ToString`
 > If you had an API which returned a value from 0-10, but actually intended to divide the value by two and forgot (return only 0-5) then changing the return to now give the correct value is a breaking.
 
 * Changing the default value for a property, field or parameter (either via an overload or default value)
@@ -34,17 +35,34 @@
      * `ExecutionEngineException`
      * `AccessViolationException`
 
-* Throwing a new exception applies only to a new code-path which can only be involved by a call with new parameter values, or state (that couldn't hit by existing code targeting the previous version)
+* Throwing a new exception that only applies to a new code-path which can only be observed with new parameter values, or state (that couldn't hit by existing code targeting the previous version)
 
-* Removing an exception that was being thrown when the API allows more robust behavior or enables new scenarios.  
+* Removing an exception that was being thrown when the API allows more robust behavior or enables new scenarios  
 > For example, a Divide method which only worked on positive values, but threw an exception otherwise, can be changed to support all values and the exception is no longer thrown.
 
 &#10007; **Disallowed**
-* Throwing a new exception in cases not listed in allowed above.
+* Throwing a new exception in any other case not listed above
 
-* Removing an exception in cases not listed in allowed above.
+* Removing an exception in any other case not listed above
+
+### Platform Support Changes
+
+&#10003; **Allowed**
+* An operation previously not supported on a specific platform, is now supported
+
+&#10007; **Disallowed**
+* An operation previously supported on a specific platform is no longer supported, or now requires a specific service-pack
 
 ### Code Changes
+&#10003; **Allowed**
+* A change which is directly intended to increase performance of an operation  
+> The ability to modify the performance of an operation is essential in order to ensure we stay competitive, and we continue to give users operational benefits. This can break anything which relies upon the current speed of an operation, sometimes visible in badly built code relying upon asynchronous operations. Note that the performance change should have no affect on other behavior of the API in question, otherwise the change will be breaking.
+
+* A change which indirectly, and often adversely, affects performance
+> Assuming the change in question is not categorized as breaking for some other reason, this is acceptable. Often, actions need to be taken which may include extra operation calls, or new functionality. This will almost always affect performance, but may be essential to make the API in question function as expected.
+
+&#10007; **Disallowed**
+
 * Adding the `checked` keyword to a code-block. This may cause code in a block to to begin to throwing exceptions, an unacceptable change.
 * Changing the order in which events are fired. Developers can reasonably expect events to fire in the same order.
 * Removing the raising of an event on a given action
@@ -52,7 +70,7 @@
 * Firing an existing event when it was never fired before
 * Changing the number of times given events are called
 
-## Unacceptable Binary and Source Compatibility changes
+## Source and Binary Compatibility Changes
 
 ### Type Attribute and Modifier Changes
 * Adding the `sealed` or `abstract` keyword to a type. However, it is not breaking when:
@@ -136,11 +154,3 @@
 * Adding or removing the `static` keyword from a member
 * Removing an attribute applied to a member
   * Although this item can be addressed on a case to case basis, removing an attribute will often be breaking. An example is the NonSerializedAttribute
-
-### Platform Support Changes
-
-&#10003; **Allowed**
-* An operation previously not supported on a specific platform, is now supported
-
-&#10007; **Disallowed**
-* An operation previously supported on a specific platform is no longer supported, or now requires a specific service-pack
