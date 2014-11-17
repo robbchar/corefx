@@ -11,23 +11,29 @@
 &#10003; **Acceptable Changes**  
 * _Increasing_ the range of accepted values for a given parameter if the member is not `virtual`
 
+* Returning a more derived type for a return or `out` value
+
 &#10007; **Unacceptable Changes**  
 * _Increasing_ the range of accepted values for a given parameter and the member is `virtual`   
-> This is breaking because any overridden members will now not function correctly for the extended range of values.  
+> This is breaking because any overridden members will now not function correctly for the extended range of values.
 
 * _Increasing_ the range of values for a return or `out` value
 * _Decreasing_ the range of accepted values within a given parameter, such as change in parsing of input and throwing new errors (even if parsing behavior is not specified in the docs)
 * Changing a return value, such as the value returned from ToString   
-> If you had an API which returned a value from 0-10, but actually intended to divide the value by two and forgot (return only 0-5) then changing the return to now give the correct value is a breaking 
+> If you had an API which returned a value from 0-10, but actually intended to divide the value by two and forgot (return only 0-5) then changing the return to now give the correct value is a breaking.
 
 * Changing the precision of a numerical return value
 
-**Property/Field Changes**
-&nbsp;&nbsp;&nbsp;&#10007; Changing the value of a public or protected field
+### Property/Field Changes 
+&#10003; **Acceptable Changes**
+* Returning a more derived type for a field or property
+
+&#10007; **Unacceptable Changes**  
+* Changing the value of a public or protected field
 * Changing the default value for a property
 * Changing the value of an enum member
 
-**Exceptions**
+### Exceptions
 * Throwing a new exception. However, it is not breaking when:
   * The exception applies only to a new code-path which can only be involved by a call with new parameter values, or state (that couldn't hit by existing code targeting the previous version)
   * You throw a more derived exception than an existing exception. For example, `CultureInfo.GetCultureInfo(String)` used to throw `ArgumentException` in .NET Framework 3.5. In .NET Framework 4.0, this was changed to throw `CultureNotFoundException` which derives from `ArgumentException`, and therefore is an acceptable change. 
@@ -39,7 +45,7 @@
 * Removing an exception that was being throw. However, it is not breaking when:
   * The API allows more robust behavior. For example, a Divide method which only worked on positive values, but threw an exception otherwise, can be changed to support all values and the exception is no longer thrown.
 
-**Code Changes**
+### Code Changes
 * Adding the `checked` keyword to a code-block. This may cause code in a block to to begin to throwing exceptions, an unacceptable change.
 * Changing the order in which events are fired. Developers can reasonably expect events to fire in the same order.
 * Removing the raising of an event on a given action
@@ -47,9 +53,9 @@
 * Firing an existing event when it was never fired before
 * Changing the number of times given events are called
 
-### Unacceptable Binary and Source Compatibility changes
+## Unacceptable Binary and Source Compatibility changes
 
-**Type Attribute and Modifier Changes**
+### Type Attribute and Modifier Changes
 * Adding the `sealed` or `abstract` keyword to a type. However, it is not breaking when:
   * There are no accessible (public or protected) constructors
 * Reducing the visibility of a type
@@ -59,23 +65,23 @@
 * Remove an attribute, or changing values of an attribute. However, it is not breaking when:
   * These values are not observable by consumers, such as `EditorBrowsable`.
 
-**Type Signature Changes**
+### Type Signature Changes
 * Changing the base class for a class. However, it is not breaking when:
   * The new base class is more derived from the original base class, -and- the new base class does not shadow any of the members of the original base class.
 * Changing the name of a type
 
-**Namespace Changes**
+### Namespace Changes
 * Moving a type to a new namespace
 * Removing a type from a namespace in which it resided
 
-**Assembly Changes**
+### Assembly Changes
 * Changing the name of an assembly
 
-**Location Changes**
+### Location Changes
 * Moving a type from one assembly into another assembly. However, it is not breaking when:
   * The old assembly is marked with `TypeForwardedToAttribute` pointing to the new location
 
-**Member Changes**
+### Member Changes
 * Adding a member to an interface
 * Adding an abstract member to a public type. However, it is not breaking when:
   * There are no accessible (public or protected) constructors
@@ -84,7 +90,7 @@
 * Adding an overload that precludes an existing overload, and defines different behavior.
   * This will break existing clients that were bound to the previous overload. For example, if you have a class that has a single version of a method that accepts a UInteger, an existing client will successfully bind to that overload, if simply passing an Integer value. However, if you add an overload that to this method that accepts an Integer, recompiling the application will now bind to the new overload. If different behavior results, then this is a breaking change.
 
-**Member Removals**
+### Member Removals
 * Removing a public member. However, it is not breaking when:
   * The member is moved onto a class higher in the hierarchy tree of the type from which it was removed.
 * Renaming a public member
@@ -92,7 +98,7 @@
   * There are no accessible (public or protected) constructors
   * The type is sealed
 
-**Member Signature Changes**
+### Member Signature Changes
 * Changing the type of a property or field to an unrelated type
 * Changing a property type to a wider type, when that property has a get accessor
 * Adding the readonly keyword to a field
@@ -101,12 +107,11 @@
 * Adding an enum value to an enum
 * Adding the FlagsAttribute to an enum
 
-
-**Parameter Type Changes**
+### Parameter Type Changes
 * Changing a passed parameter type to an unrelated (no inheritance relationship) type
 * Changing a parameter type from a base class to an inherited class
 
-**Parameters**
+### Parameters
 * Adding a new parameter 
 * Removing a parameter 
 * Renaming a parameter (including case). This is considered breaking for two reasons:
@@ -121,11 +126,11 @@
 * Increasing the range of accepted values within a given parameter, and the member is virtual
   * This is considered breaking since any overridden members will now not function properly, for the extended range of values
 
-**Return Type Changes**
+### Return Type Changes
 * Changing the return type to an unrelated (no inheritance relationship) type
 * Changing the return type from an inherited class to a base class					
 
-**Member Modifier Changes**
+### Member Modifier Changes
 * Adding or removing the `abstract` keyword to a member. However, it is not breaking when:
   * Removing `abstract` and adding the `virtual` keyword
 * Removing the `virtual` keyword from a member
