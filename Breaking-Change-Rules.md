@@ -8,7 +8,7 @@
 
 &#10007; **Disallowed**  
 * Increasing the range of accepted values for a property or parameter if the member _is_ `virtual`   
-> This is breaking because any overridden members will now not function correctly for the extended range of values.
+> This is breaking because any existing overridden members will now not function correctly for the extended range of values.
 
 * Decreasing the range of accepted values for a property or parameter, such as a change in parsing of input and throwing new errors (even if parsing behavior is not specified in the docs)
 * Increasing the range of output values for a property, field, return or `out` value
@@ -23,16 +23,26 @@
 * Changing the precision of a numerical return value
 
 ### Exceptions
-* Throwing a new exception. However, it is not breaking when:
-  * The exception applies only to a new code-path which can only be involved by a call with new parameter values, or state (that couldn't hit by existing code targeting the previous version)
-  * You throw a more derived exception than an existing exception. For example, `CultureInfo.GetCultureInfo(String)` used to throw `ArgumentException` in .NET Framework 3.5. In .NET Framework 4.0, this was changed to throw `CultureNotFoundException` which derives from `ArgumentException`, and therefore is an acceptable change. 
-  * You are currently throwing `NotSupportedException`, `NotImplementedException`, 'NullReferenceException' or an exception that is considered unrecoverable. Unrecoverable exceptions should not be getting caught and will be dealt with on a broad level or by a high-level catch-all handler. Therefore, users are not expected to have code that catches these explicit exceptions. The list of unrecoverable exceptions are:
+&#10003; **Allowed**
+* Throwing a more derived exception than an existing exception  
+> For example, `CultureInfo.GetCultureInfo(String)` used to throw `ArgumentException` in .NET Framework 3.5. In .NET Framework 4.0, this was changed to throw `CultureNotFoundException` which derives from `ArgumentException`, and therefore is an acceptable change.
+
+* Throwing a more specific exception than `NotSupportedException`, `NotImplementedException`, `NullReferenceException` or an exception that is considered unrecoverable  
+> Unrecoverable exceptions should not be getting caught and will be dealt with on a broad level by a high-level catch-all handler. Therefore, users are not expected to have code that catches these explicit exceptions. The list of unrecoverable exceptions are:
      * `StackOverflowException`
      * `SEHException`
      * `ExecutionEngineException`
      * `AccessViolationException`
-* Removing an exception that was being throw. However, it is not breaking when:
-  * The API allows more robust behavior. For example, a Divide method which only worked on positive values, but threw an exception otherwise, can be changed to support all values and the exception is no longer thrown.
+
+* Throwing a new exception applies only to a new code-path which can only be involved by a call with new parameter values, or state (that couldn't hit by existing code targeting the previous version)
+
+* Removing an exception that was being thrown when the API allows more robust behavior or enables new scenarios.  
+> For example, a Divide method which only worked on positive values, but threw an exception otherwise, can be changed to support all values and the exception is no longer thrown.
+
+&#10007; **Disallowed**
+* Throwing a new exception in cases not listed in allowed above.
+
+* Removing an exception in cases not listed in allowed above.
 
 ### Code Changes
 * Adding the `checked` keyword to a code-block. This may cause code in a block to to begin to throwing exceptions, an unacceptable change.
@@ -134,4 +144,3 @@
 
 &#10007; **Disallowed**
 * An operation previously supported on a specific platform is no longer supported, or now requires a specific service-pack
-
