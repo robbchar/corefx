@@ -61,13 +61,25 @@
 * A change which indirectly, and often adversely, affects performance
 > Assuming the change in question is not categorized as breaking for some other reason, this is acceptable. Often, actions need to be taken which may include extra operation calls, or new functionality. This will almost always affect performance, but may be essential to make the API in question function as expected.
 
+* Changing the text of an error message
+> Not only should users not rely on these text messages, but they change anyways based on culture
+
+* Calling a brand new event that wasn't previously defined.
+
 &#10007; **Disallowed**
 
-* Adding the `checked` keyword to a code-block. This may cause code in a block to to begin to throwing exceptions, an unacceptable change.
-* Changing the order in which events are fired. Developers can reasonably expect events to fire in the same order.
+* Adding the `checked` keyword to a code-block  
+> This may cause code in a block to to begin to throwing exceptions, an unacceptable change.
+
+* Changing the order in which events are fired
+> Developers can reasonably expect events to fire in the same order.
+
 * Removing the raising of an event on a given action
+
 * Changing a synchronous API to asynchronous (and vice versa)
+
 * Firing an existing event when it was never fired before
+
 * Changing the number of times given events are called
 
 ## Source and Binary Compatibility Changes
