@@ -176,9 +176,9 @@ successfully bind to that overload, if simply passing an `int` value. However, i
 
 * Adding, removing or changing the order of parameters
 
-* Removing the `params` keyword from a parameter
+* Removing `params` from a parameter
 
-* Adding or removing `out` or `ref` keywords to a parameter
+* Adding or removing `out` or `ref` keywords from a parameter
 
 * Renaming a parameter (including case)  
 > This is considered breaking for two reasons:
