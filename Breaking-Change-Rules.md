@@ -150,7 +150,8 @@
 
 * Changing a member from `abstract` to `virtual`
 
-* Adding `virtual` to a member
+* Adding `virtual` to a member  
+> Make note, that marking a member virtual might cause previous consumers to still call the member non-virtually.
 
 * Introducing or removing an override
 > Make note, that introducing an override might cause previous consumers to skip over the override when calling `base`.
