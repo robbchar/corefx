@@ -84,50 +84,73 @@
 
 ## Source and Binary Compatibility Changes
 
-### Type Attribute and Modifier Changes
-* Adding the `sealed` or `abstract` keyword to a type. However, it is not breaking when:
-  * There are no accessible (public or protected) constructors
-* Reducing the visibility of a type
-* Removing the implementation of an interface on a class. However, it is not breaking when:
-  * If you added the implementation of an interface which derives from the removed interface. For example, you removed `IDisposable`, but implemented `IComponent`, which derives from `IDisposable`.
-  * The interface is already implemented lower in the hierarchy.
-* Remove an attribute, or changing values of an attribute. However, it is not breaking when:
-  * These values are not observable by consumers, such as `EditorBrowsable`.
+### Types
+&#10003; **Allowed**
+* Adding the `sealed` or `abstract` keyword to a type when there are _no_ accessible (public or protected) constructors
 
-### Type Signature Changes
-* Changing the base class for a class. However, it is not breaking when:
-  * The new base class is more derived from the original base class, -and- the new base class does not shadow any of the members of the original base class.
-* Changing the name of a type
+* Increasing the visibility of a type
 
-### Namespace Changes
-* Moving a type to a new namespace
-* Removing a type from a namespace in which it resided
+* Introducing a new base class
+> So long as it does not introduce any new abstract members or change the semantics or behavior of existing members, a type can be introduced into a hierarchy between two existing types. For example, between .NET Framework 1.1 and .NET Framework 2.0, we introduced `DbConnection` as a new base class for `SqlConnection` which previously derived from `Component`.
+
+* Adding an interface implementation to a type
+> This is acceptable because it will not adversely affect existing clients. Any changes which could be made to the type being changed in this situation, will have to work within the boundaries of acceptable changes defined here, in order for the new implementation to remain acceptable. 
+> Extreme caution is urged when adding interfaces that directly affect the ability of the designer or serializer to generate code or data, that cannot be consumed down-level. An example is the `ISerializable` interface.
+
+* Removing an interface implementation from a type when the interface is already implemented lower in the hierarchy
+
+* Moving a type from one assembly into another assembly  
+> The old assembly must be marked with `TypeForwardedToAttribute` pointing to the new location
+
+&#10007; **Disallowed**
+* Adding the `sealed` or `abstract` keyword to a type when there _are_ accessible (public or protected) constructors
+
+* Decreasing the visibility of a type
+
+* Removing the implementation of an interface on a type  
+> It is not breaking when you added the implementation of an interface which derives from the removed interface. For example, you removed `IDisposable`, but implemented `IComponent`, which derives from `IDisposable`.
+
+* Removing one or more base classes for a type, including changing `struct` to `class` and vice versa
+
+* Changing the namespace or name of a type
 
 ### Assembly Changes
+&#10003; **Allowed**
+* Making an assembly to portable (assuming the same platforms are still supported)
+
+&#10007; **Disallowed**
 * Changing the name of an assembly
 
-### Location Changes
-* Moving a type from one assembly into another assembly. However, it is not breaking when:
-  * The old assembly is marked with `TypeForwardedToAttribute` pointing to the new location
+* Changing the public key of an assembly
 
 ### Member Changes
-* Adding a member to an interface
-* Adding an abstract member to a public type. However, it is not breaking when:
-  * There are no accessible (public or protected) constructors
-  * The type is sealed
+&#10003; **Allowed**
+* Adding an abstract member to a public type when there are _no_ accessible (`public` or `protected`) constructors, or the type is `sealed`
+
+* Moving a member onto a class higher in the hierarchy tree of the type from which it was removed
+
+* Increasing the visibility of a member
+
+* Decreasing the visibility of a member when there are _no_ accessible (`public` or `protected`) constructors or the type is `sealed`
+
+&#10003; **Disallowed**
+* Adding an member to an interface
+
+* Adding an abstract member to a type when there _are_ accessible (`public` or `protected`) constructors and the type is not `sealed`
+
 * Adding a constructor to a class which previously had no constructor, without also adding the default constructor
-* Adding an overload that precludes an existing overload, and defines different behavior.
-  * This will break existing clients that were bound to the previous overload. For example, if you have a class that has a single version of a method that accepts a UInteger, an existing client will successfully bind to that overload, if simply passing an Integer value. However, if you add an overload that to this method that accepts an Integer, recompiling the application will now bind to the new overload. If different behavior results, then this is a breaking change.
 
-### Member Removals
-* Removing a public member. However, it is not breaking when:
-  * The member is moved onto a class higher in the hierarchy tree of the type from which it was removed.
-* Renaming a public member
-* Reducing the scope of a member. However, it is not breaking when the member is protected and:
+* Adding an overload that precludes an existing overload, and defines different behavior  
+> This will break existing clients that were bound to the previous overload. For example, if you have a class that has a single version of a method that accepts a `uint`, an existing consumer will 
+successfully bind to that overload, if simply passing an `int` value. However, if you add an overload that accepts an `int`, recompiling or via late-binding the application will now bind to the new overload. If different behavior results, then this is a breaking change.
+
+* Removing or renaming a member
+
+* Decreasing the visibility of a member when there _are_ accessible (`public` or `protected`) constructors and the type is not `sealed`
   * There are no accessible (public or protected) constructors
   * The type is sealed
 
-### Member Signature Changes
+### Signature
 * Changing the type of a property or field to an unrelated type
 * Changing a property type to a wider type, when that property has a get accessor
 * Adding the readonly keyword to a field
@@ -166,3 +189,6 @@
 * Adding or removing the `static` keyword from a member
 * Removing an attribute applied to a member
   * Although this item can be addressed on a case to case basis, removing an attribute will often be breaking. An example is the NonSerializedAttribute
+
+* Remove an attribute, or changing values of an attribute. However, it is not breaking when:
+  * These values are not observable by consumers, such as `EditorBrowsable`.
