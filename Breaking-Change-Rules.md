@@ -7,14 +7,14 @@
 &#10007; **Disallowed**
 * An operation previously supported on a specific platform is no longer supported, or now requires a specific service-pack
 
-### Parameters and Return Values
-&#10003; **Allowed**  
-* _Increasing_ the range of accepted values for a given parameter if the member is not `virtual`
+### Parameters, Field, Property and Return Values
+&#10003; **Allowed**
+* Increasing the range of accepted values for a given property or parameter if the member _is not_ `virtual`
 
-* Returning a more derived type for a return or `out` value
+* Returning a more derived type for a field, property, return or `out` value
 
 &#10007; **Disallowed**  
-* _Increasing_ the range of accepted values for a given parameter and the member is `virtual`   
+* Increasing the range of accepted values for a given property or parameter if the member _is_ `virtual`   
 > This is breaking because any overridden members will now not function correctly for the extended range of values.
 
 * _Increasing_ the range of values for a return or `out` value
