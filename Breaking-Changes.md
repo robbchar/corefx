@@ -14,8 +14,7 @@ To help triage breaking changes, we classify them in to four buckets:
 4. Clearly Non-Public
 
 ### Bucket 1: Public Contract
-
-Clear violation of public contract.
+*Clear violation of public contract.*
 
 Examples:
 * throwing a new exception type in an existing common scenario
@@ -24,7 +23,7 @@ Examples:
 * changing the value of a public constant or enum member
 
 ### Bucket 2: Reasonable Grey Area
-Change of behavior that customers would have reasonably depended on.
+*Change of behavior that customers would have reasonably depended on.*
 
 Examples:
 * change in timing/order of events (even when not specified in docs)
