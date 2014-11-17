@@ -13,13 +13,14 @@
 
 &#10007; **Unacceptable Changes**  
 * _Increasing_ the range of accepted values for a given parameter and the member is `virtual`   
-> This breaking because any overridden members will now not function properly for the extended range of values.  
+> This is breaking because any overridden members will now not function correctly for the extended range of values.  
 
 * _Increasing_ the range of values for a return or `out` value
 * _Decreasing_ the range of accepted values within a given parameter, such as change in parsing of input and throwing new errors (even if parsing behavior is not specified in the docs)
-* Changing the precision of a numerical return value
 * Changing a return value, such as the value returned from ToString   
-    * If you had an API which returned a value from 0-10, but actually intended to divide the value by two and forgot (return only 0-5) then changing the return to now give the correct value is a breaking 
+> If you had an API which returned a value from 0-10, but actually intended to divide the value by two and forgot (return only 0-5) then changing the return to now give the correct value is a breaking 
+
+* Changing the precision of a numerical return value
 
 **Property/Field Changes**
 &nbsp;&nbsp;&nbsp;&#10007; Changing the value of a public or protected field
