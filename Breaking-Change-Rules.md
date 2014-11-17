@@ -1,5 +1,7 @@
-[Behavioral Changes](Breaking-Change-Rules#behavioral-changes)
-[Source and Binary Compatibility Changes](Breaking-Change-Rules#source-and-binary-compatibility-changes)
+## Table of Contents
+
+* [Behavioral Changes](Breaking-Change-Rules#behavioral-changes)
+* [Source and Binary Compatibility Changes](Breaking-Change-Rules#source-and-binary-compatibility-changes)
 
 ## Behavioral Changes
 
