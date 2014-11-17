@@ -116,7 +116,7 @@
 
 ### Assembly Changes
 &#10003; **Allowed**
-* Making an assembly portable (assuming the same platforms are still supported)
+* Making an assembly portable when the same platforms are still supported
 
 &#10007; **Disallowed**
 * Changing the name of an assembly
