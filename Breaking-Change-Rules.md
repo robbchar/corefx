@@ -1,37 +1,26 @@
 ## Behavioral Changes
-### Platform Support Changes
 
+### Property, Field, Parameter and Return Values
 &#10003; **Allowed**
-* An operation previously not supported on a specific platform, is now supported
+* Increasing the range of accepted values for a property or parameter if the member _is not_ `virtual`
 
-&#10007; **Disallowed**
-* An operation previously supported on a specific platform is no longer supported, or now requires a specific service-pack
-
-### Parameters, Field, Property and Return Values
-&#10003; **Allowed**
-* Increasing the range of accepted values for a given property or parameter if the member _is not_ `virtual`
-
-* Returning a more derived type for a field, property, return or `out` value
+* Returning a more derived type for a property, field, return or `out` value
 
 &#10007; **Disallowed**  
-* Increasing the range of accepted values for a given property or parameter if the member _is_ `virtual`   
+* Increasing the range of accepted values for a property or parameter if the member _is_ `virtual`   
 > This is breaking because any overridden members will now not function correctly for the extended range of values.
 
-* _Increasing_ the range of values for a return or `out` value
-* _Decreasing_ the range of accepted values within a given parameter, such as change in parsing of input and throwing new errors (even if parsing behavior is not specified in the docs)
-* Changing a return value, such as the value returned from ToString   
+* Decreasing the range of accepted values for a property or parameter, such as a change in parsing of input and throwing new errors (even if parsing behavior is not specified in the docs)
+* Increasing the range of output values for a property, field, return or `out` value
+
+* Changing a output value for a property, field, return or 'out' value, such as the value returned from `ToString`
 > If you had an API which returned a value from 0-10, but actually intended to divide the value by two and forgot (return only 0-5) then changing the return to now give the correct value is a breaking.
 
-* Changing the precision of a numerical return value
+* Changing the default value for a property, field or parameter (either via an overload or default value)
 
-### Property/Field Changes 
-&#10003; **Allowed**
-* Returning a more derived type for a field or property
-
-&#10007; **Disallowed**  
-* Changing the value of a public or protected field
-* Changing the default value for a property
 * Changing the value of an enum member
+
+* Changing the precision of a numerical return value
 
 ### Exceptions
 * Throwing a new exception. However, it is not breaking when:
@@ -137,3 +126,12 @@
 * Adding or removing the `static` keyword from a member
 * Removing an attribute applied to a member
   * Although this item can be addressed on a case to case basis, removing an attribute will often be breaking. An example is the NonSerializedAttribute
+
+### Platform Support Changes
+
+&#10003; **Allowed**
+* An operation previously not supported on a specific platform, is now supported
+
+&#10007; **Disallowed**
+* An operation previously supported on a specific platform is no longer supported, or now requires a specific service-pack
+
