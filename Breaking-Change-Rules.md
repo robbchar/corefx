@@ -1,3 +1,6 @@
+(Behavioral Changes)[Breaking-Change-Rules#behavioral-changes]
+(Source and Binary Compatibility Changes)[Breaking-Change-Rules#source-and-binary-compatibility-changes]
+
 ## Behavioral Changes
 
 ### Property, Field, Parameter and Return Values
@@ -84,6 +87,15 @@
 
 ## Source and Binary Compatibility Changes
 
+### Assembly Changes
+&#10003; **Allowed**
+* Making an assembly portable when the same platforms are still supported
+
+&#10007; **Disallowed**
+* Changing the name of an assembly
+
+* Changing the public key of an assembly
+
 ### Types
 &#10003; **Allowed**
 * Adding the `sealed` or `abstract` keyword to a type when there are _no accessible_ (public or protected) constructors
@@ -113,15 +125,6 @@
 * Removing one or more base classes for a type, including changing `struct` to `class` and vice versa
 
 * Changing the namespace or name of a type
-
-### Assembly Changes
-&#10003; **Allowed**
-* Making an assembly portable when the same platforms are still supported
-
-&#10007; **Disallowed**
-* Changing the name of an assembly
-
-* Changing the public key of an assembly
 
 ### Member Changes
 &#10003; **Allowed**
