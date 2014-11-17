@@ -1,7 +1,17 @@
 ## Table of Contents
 
 * [Behavioral Changes](Breaking-Change-Rules#behavioral-changes)
+   * [Property, Field, Parameter and Return Values](Breaking-Change-Rules#property-field-parameter-and-return-values)
+   * [Exceptions](Breaking-Change-Rules#exceptions)
+   * [Platform Support](Breaking-Change-Rules#platform-support)
+   * [Code](Breaking-Change-Rules#code)
+
 * [Source and Binary Compatibility Changes](Breaking-Change-Rules#source-and-binary-compatibility-changes)
+   * [Assemblies](Breaking-Change-Rules#assemblies)
+   * [Types](Breaking-Change-Rules#types)
+   * [Members](Breaking-Change-Rules#members)
+   * [Signatures](Breaking-Change-Rules#signatures)
+   * [Attributes](Breaking-Change-Rules#attributes)
 
 ## Behavioral Changes
 
@@ -50,7 +60,7 @@
 
 * Removing an exception in any other case not listed above
 
-### Platform Support Changes
+### Platform Support
 
 &#10003; **Allowed**
 * An operation previously not supported on a specific platform, is now supported
@@ -58,7 +68,7 @@
 &#10007; **Disallowed**
 * An operation previously supported on a specific platform is no longer supported, or now requires a specific service-pack
 
-### Code Changes
+### Code
 &#10003; **Allowed**
 * A change which is directly intended to increase performance of an operation  
 > The ability to modify the performance of an operation is essential in order to ensure we stay competitive, and we continue to give users operational benefits. This can break anything which relies upon the current speed of an operation, sometimes visible in badly built code relying upon asynchronous operations. Note that the performance change should have no affect on other behavior of the API in question, otherwise the change will be breaking.
@@ -89,7 +99,7 @@
 
 ## Source and Binary Compatibility Changes
 
-### Assembly Changes
+### Assemblies
 &#10003; **Allowed**
 * Making an assembly portable when the same platforms are still supported
 
@@ -128,7 +138,7 @@
 
 * Changing the namespace or name of a type
 
-### Member Changes
+### Members
 &#10003; **Allowed**
 * Adding an abstract member to a public type when there are _no accessible_ (`public` or `protected`) constructors, or the type is `sealed`
 
@@ -192,7 +202,7 @@ successfully bind to that overload, if simply passing an `int` value. However, i
 
 * Changing a parameter modifier from `ref` to `out`, or vice versa
 
-### Attribute Changes
+### Attributes
 &#10003; **Allowed**
 * Changing the value of an attribute that is _not observable_
 
