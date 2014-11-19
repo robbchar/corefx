@@ -1,5 +1,4 @@
 * [Home](Home)
- * [FAQ](FAQ)
 * [Developer Guide](Developer Guide)
  * [Contributing](Contributing)
  * [Strong Naming](Strong Naming)
