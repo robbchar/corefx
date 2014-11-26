@@ -135,7 +135,7 @@ namespace System.Collections.Generics
 }
 ```
 ### Commits 
-Please format commit messages as follows:
+Please format commit messages as follows (based on this [excellent post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)):
 
 ```
 Summarize change in 50 characters or less
