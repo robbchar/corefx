@@ -75,10 +75,10 @@ namespace System.More.AndMore
 Please format commit messages as follows:
 
 ```
-Summarize what the change does on the first line in 80 characters or less.
+Summarize change in 50 characters or less
 
 Provide more detail after the first line. Leave one blank line below the
-summary and wrap all lines at 80 characters or less.
+summary and wrap all lines at 72 characters or less.
 
 If the change fixes an issue, leave another blank line after the final 
 paragraphand indicate which issue is fixed in the specific format below.
