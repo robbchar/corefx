@@ -1,6 +1,6 @@
 ## General .NET Contributing Guide
 
-1. Make sure that there is a corresponding issue for your change first. If there
+1. Unless it is a trivial change, make sure that there is a corresponding issue for your change first. If there
    is none, create one.
 2. Create a fork in GitHub
 3. Create a branch off the `master` branch. Name it something that that makes
