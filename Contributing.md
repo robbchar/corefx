@@ -21,7 +21,7 @@
   a discussion so we can agree on a direction before you invest a large amount
   of time.
 * **DON'T** commit code that you didn't write. If you find MIT or Apache 2 licensed code that you think is a good fit to add to .NET Core, file an issue and start a discussion before proceeding.
-* **DON"T** add API additions without filing an issue and discussing with us first.
+* **DONT** add API additions without filing an issue and discussing with us first.
 
 ## C# Coding Style
 
