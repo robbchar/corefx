@@ -134,8 +134,6 @@ namespace System.Collections.Generics
     }
 }
 ```
-## Additional Guidelines for dotnet/corefx
-
 ### Commits 
 Please format commit messages as follows:
 
