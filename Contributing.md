@@ -27,7 +27,7 @@
 
 The general rule we follow is "use Visual Studio defaults".
 
-1. We use Allman style braces
+1. We use [Allman style](http://en.wikipedia.org/wiki/Indent_style#Allman_style) braces, where each brace begins on a new line
 2. We use four spaces of indentation (no tabs)
 3. We use "_camelCase" private members and use "readonly" where possible
 4. We avoid `this.` unless absolutely necessary
