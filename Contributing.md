@@ -27,15 +27,15 @@
 
 The general rule we follow is "use Visual Studio defaults".
 
-1. We use [Allman style](http://en.wikipedia.org/wiki/Indent_style#Allman_style) braces, where each brace begins on a new line
-2. We use four spaces of indentation (no tabs)
-3. We use "_camelCase" private members and use "readonly" where possible
-4. We avoid `this.` unless absolutely necessary
+1. We use [Allman style](http://en.wikipedia.org/wiki/Indent_style#Allman_style) braces, where each brace begins on a new line.
+2. We use four spaces of indentation (no tabs).
+3. We use "_camelCase" private members and use "readonly" where possible.
+4. We avoid `this.` unless absolutely necessary.
 5. We always specify the visibility, even if it's the default (i.e.
-   `private string _foo` not `string _foo`)
+   `private string _foo` not `string _foo`).
 6. Namespace imports should be specified at the top of the file, *outside* of
    `namespace` declarations and should be sorted alphabetically, with `System.`
-   namespaces at the top and blank lines between different top level groups
+   namespaces at the top and blank lines between different top level groups.
 
 ### Example File:
 
