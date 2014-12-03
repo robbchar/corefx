@@ -21,7 +21,7 @@
   a discussion so we can agree on a direction before you invest a large amount
   of time.
 * **DON'T** commit code that you didn't write. If you find MIT or Apache 2 licensed code that you think is a good fit to add to .NET Core, file an issue and start a discussion before proceeding.
-* **DONT** add API additions without filing an issue and discussing with us first.
+* **DON'T** add API additions without filing an issue and discussing with us first.
 
 ## C# Coding Style
 
@@ -34,8 +34,18 @@ The general rule we follow is "use Visual Studio defaults".
 5. We always specify the visibility, even if it's the default (i.e.
    `private string _foo` not `string _foo`).
 6. Namespace imports should be specified at the top of the file, *outside* of
-   `namespace` declarations and should be sorted alphabetically, with `System.`
+   `namespace` declarations and should be sorted alphabetically, with `System.
    namespaces at the top and blank lines between different top level groups.
+7. Avoid more than one empty line at any time. For example, do not have two
+   blank lines between members of a type.
+8. Avoid spurious free spaces.
+   For example avoid `if (someVar == 0)...`, where the dots mark the spurious free spaces.
+   Consider enabling "View White Space (Ctrl+E, S)" if using Visual Studio, to aid detection.
+9. If a file happens to differ in style from these guidelines (e.g. private members are named `m_member`
+   rather than `_member`), the existing style in that file takes precedence.
+   There is an ongoing discussion on which cases to leave as-is and which to just change over to the
+   standard style guidelines. Once the discussion concludes, this particular guideline will change
+   accordingly.
 
 ### Example File:
 
