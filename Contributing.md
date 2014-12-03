@@ -43,9 +43,6 @@ The general rule we follow is "use Visual Studio defaults".
    Consider enabling "View White Space (Ctrl+E, S)" if using Visual Studio, to aid detection.
 9. If a file happens to differ in style from these guidelines (e.g. private members are named `m_member`
    rather than `_member`), the existing style in that file takes precedence.
-   There is an ongoing discussion on which cases to leave as-is and which to just change over to the
-   standard style guidelines. Once the discussion concludes, this particular guideline will change
-   accordingly.
 
 ### Example File:
 
