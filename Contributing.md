@@ -143,8 +143,9 @@ Summarize change in 50 characters or less
 Provide more detail after the first line. Leave one blank line below the
 summary and wrap all lines at 72 characters or less.
 
-If the change fixes an issue, leave another blank line after the final 
-paragraphand indicate which issue is fixed in the specific format below.
+If the change fixes an issue, leave another blank line after the final
+paragraph and indicate which issue is fixed in the specific format
+below.
 
 Fix #42
 ```
