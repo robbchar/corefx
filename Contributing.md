@@ -29,8 +29,8 @@ The general rule we follow is "use Visual Studio defaults".
 
 1. We use [Allman style](http://en.wikipedia.org/wiki/Indent_style#Allman_style) braces, where each brace begins on a new line.
 2. We use four spaces of indentation (no tabs).
-3. We use "_camelCase" private members and use "readonly" where possible.
-4. We avoid `this.` unless absolutely necessary.
+3. We use `_camelCase` private members and use `readonly` where possible. Prefix instance fields with `_`, static fields with `s_` and thread static fields with `t\_`. 
+4. We avoid `this.` unless absolutely necessary. 
 5. We always specify the visibility, even if it's the default (i.e.
    `private string _foo` not `string _foo`).
 6. Namespace imports should be specified at the top of the file, *outside* of
@@ -150,8 +150,9 @@ Summarize change in 50 characters or less
 Provide more detail after the first line. Leave one blank line below the
 summary and wrap all lines at 72 characters or less.
 
-If the change fixes an issue, leave another blank line after the final 
-paragraphand indicate which issue is fixed in the specific format below.
+If the change fixes an issue, leave another blank line after the final
+paragraph and indicate which issue is fixed in the specific format
+below.
 
 Fix #42
 ```
