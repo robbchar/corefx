@@ -1,1 +1,1 @@
-Welcome to the corefx wiki!
+This is the developer wiki for .NET Core Framework repository.
