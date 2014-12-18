@@ -167,7 +167,7 @@ changes during the course of your commits, please rebase them away before submit
 the PR.
 
 ### Issues
-If you are looking at getting your feet wet with some simple (but still beneficial) changes, check out our [Up for grabs](https://github.com/dotnet/corefx/labels/up%20for%20grabs) issues.
+If you are looking at getting your feet wet with some simple (but still beneficial) changes, check out our [Up-for-grabs issues](https://github.com/dotnet/corefx/labels/up-for-grabs).
 
 You do not need to file an issue for trivial changes (e.g. typo fixes). Just send us
 a PR if it's tiny.
