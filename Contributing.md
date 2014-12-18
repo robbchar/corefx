@@ -43,6 +43,7 @@ The general rule we follow is "use Visual Studio defaults".
    Consider enabling "View White Space (Ctrl+E, S)" if using Visual Studio, to aid detection.
 9. If a file happens to differ in style from these guidelines (e.g. private members are named `m_member`
    rather than `_member`), the existing style in that file takes precedence.
+10. We only use `var` when it's obvious what the variable type is (i.e. `var stream = new FileStream(...)` not `var stream = OpenStandardInput()`).
 
 We have provided a Visual Studio 2013 vssettings file (`corefx.vssettings`) at the root of the corefx repository, enabling C# auto-formatting conforming to the above guidelines. Note that rules 7 and 8 are not covered by the vssettings, since these are not rules currently supported by VS formatting.
 
@@ -94,7 +95,7 @@ namespace System.Collections.Generic
 
         protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
         {
-            var handler = CollectionChanged;
+            NotifyCollectionChangedEventHandler handler = CollectionChanged;
             if (handler != null)
             {
                 handler(this, e);
