@@ -1,6 +1,7 @@
 * [Home](Home)
 * [Developer Guide](Developer Guide)
  * [Contributing](Contributing)
+ * [Framework Design Guidelines Digest](Framework Design Guidelines Digest)
  * [Strong Naming](Strong Naming)
     * [OSS Signing](OSS Signing)
  * [Breaking Changes](Breaking Changes)
