@@ -66,13 +66,13 @@ Casing and naming guidelines apply only to public and protected identifiers, and
 privately implemented interface members. Teams are free to choose their own
 guidelines for internal and private identifiers.
 
-**DO** use PascalCasing (capitalize the first letter of each word) for all
-identifiers except parameter names. For example, use `TextColor` rather than
+&#10003; **DO** use PascalCasing (capitalize the first letter of each word) for
+all identifiers except parameter names. For example, use `TextColor` rather than
 `Textcolor` or `Text color`.
 
-**DO** use camelCasing (capitalize first letters of each word except for the
-first word) for all member parameter names. prefix descriptive type parameter
-names with `T`.
+&#10003; **DO** use camelCasing (capitalize first letters of each word except
+for the first word) for all member parameter names. prefix descriptive type
+parameter names with `T`.
 
 ```CSharp
 public interface ISessionChannel<TSession>
@@ -82,40 +82,42 @@ public interface ISessionChannel<TSession>
 }
 ```
 
-**CONSIDER** using `T` as the type parameter name for types with one single
-letter type parameter.
+&#10003; **CONSIDER** using `T` as the type parameter name for types with one
+single letter type parameter.
 
-**DO** use PascalCasing or camelCasing for any acronyms over two characters
-long. For example, use `HtmlButton` rather than `HTMLButton`, but `System.IO`
-instead of `System.Io`.
+&#10003; **DO** use PascalCasing or camelCasing for any acronyms over two
+characters long. For example, use `HtmlButton` rather than `HTMLButton`, but
+`System.IO` instead of `System.Io`.
 
-**DO NOT** use acronyms that are not generally accepted in the field.
+&#10007; **DO NOT** use acronyms that are not generally accepted in the field.
 
-**DO** use well-known acronyms only when absolutely necessary. For example, use
-`UI` for User Interface and `Html` for Hyper-Text Markup Language.
+&#10003; **DO** use well-known acronyms only when absolutely necessary. For
+example, use `UI` for User Interface and `Html` for Hyper-Text Markup Language.
 
-**DO NOT** use of shortenings or contractions as parts of identifier names. For
-example, use `GetWindow` rather than `GetWin`.
+&#10007; **DO NOT** use of shortenings or contractions as parts of identifier
+names. For example, use `GetWindow` rather than `GetWin`.
 
-**DO NOT** use underscores, hyphens, or any other non-alphanumeric characters.
+&#10007; **DO NOT** use underscores, hyphens, or any other non-alphanumeric
+characters.
 
-**DO NOT** use the Hungarian notation.
+&#10007; **DO NOT** use the Hungarian notation.
 
-**DO** name types and properties with nouns or noun phrases.
+&#10003; **DO** name types and properties with nouns or noun phrases.
 
-**DO** name methods and events with verbs or verb phrases. Always give events
-names that have a concept of before and after using the present particle and
-simple past tense. For example, an event that is raised before a `Form` closes
-should be named `Closing`. An event raised after a `Form` is closed should be
-named `Closed`.
+&#10003; **DO** name methods and events with verbs or verb phrases. Always give
+events names that have a concept of before and after using the present particle
+and simple past tense. For example, an event that is raised before a `Form`
+closes should be named `Closing`. An event raised after a `Form` is closed
+should be named `Closed`.
 
-**DO NOT** use the `Before` or `After` prefixes to indicate pre and post events.
+&#10007; **DO NOT** use the `Before` or `After` prefixes to indicate pre and
+post events.
 
-**DO** use the following prefixes:
+&#10003; **DO** use the following prefixes:
 * `I` for interfaces.
 * `T` for generic type parameters (except single letter parameters).
 
-**DO** use the following postfixes:
+&#10003; **DO** use the following postfixes:
 
 * `Exception` for types inheriting from `System.Exception`.
 * `Collection` for types implementing `IEnumerable`.
@@ -124,50 +126,51 @@ named `Closed`.
 * `EventHandler` for types inheriting from `System.Delegate`.
 * `Attribute` for types inheriting from `System.Attribute`.
 
-**DO NOT** use the postfixes listed above for any other types.
+&#10007; **DO NOT** use the postfixes listed above for any other types.
 
-**DO NOT** postfix type names with `Flags` or `Enum`.
+&#10007; **DO NOT** postfix type names with `Flags` or `Enum`.
 
-**DO** use plural noun phrases for flag enums (enums with values that support
-bitwise operations) and singular noun phrases for non-flag enums.
+&#10003; **DO** use plural noun phrases for flag enums (enums with values that
+support bitwise operations) and singular noun phrases for non-flag enums.
 
-**DO** use the following template for naming namespaces:
+&#10003; **DO** use the following template for naming namespaces:
 
     <Company>.<Technology>[.<Feature>].
 
 For example, `Microsoft.Office.ClipGallery`. Operating System components should
 use System namespaces instead for the <Company> namespaces.
 
-**DO NOT** use organizational hierarchies as the basis for namespace
+&#10007; **DO NOT** use organizational hierarchies as the basis for namespace
 hierarchies. Namespaces should correspond to scenarios regardless of what teams
 contribute APIs for those scenarios.
 
 # General Design Guidelines
 
-**DO** use the most derived type for return values and the least derived type
-for input parameters. For example take `IEnumerable` as an input parameter but
-return `Collection<string>` as the return type. Provide a clear API entry point
-for every scenario. Every feature area should have preferably one, but sometimes
-more, types that are the starting points for exploring given technology. We call
-such types Aggregate Components. Implementation of large majority of scenarios
-in given technology area should start with one of the Aggregate Components.
+&#10003; **DO** use the most derived type for return values and the least
+derived type for input parameters. For example take `IEnumerable` as an input
+parameter but return `Collection<string>` as the return type. Provide a clear
+API entry point for every scenario. Every feature area should have preferably
+one, but sometimes more, types that are the starting points for exploring given
+technology. We call such types Aggregate Components. Implementation of large
+majority of scenarios in given technology area should start with one of the
+Aggregate Components.
 
-**DO** write sample code for your top scenarios. The first type used in all
-these samples should be an Aggregate Component and the sample code should be
+&#10003; **DO** write sample code for your top scenarios. The first type used in
+all these samples should be an Aggregate Component and the sample code should be
 straightforward. If the code gets longer than several lines, you need to
 redesign. Writing to an event log in Win32 API was around 100 lines of code.
 Writing to .NET Framework EventLog takes one line of code.
 
-**DO** model higher level concepts (physical objects) rather than system level
-tasks with Aggregate Components. For example `File`, `Directory`, `Drive` are
-easier to understand than `Stream`, `Formatter`, `Comparer`.
+&#10003; **DO** model higher level concepts (physical objects) rather than
+system level tasks with Aggregate Components. For example `File`, `Directory`,
+`Drive` are easier to understand than `Stream`, `Formatter`, `Comparer`.
 
-**DO NOT** require users of your APIs to instantiate multiple objects in main
-scenarios. Simple tasks should be done with new statement.
+&#10007; **DO NOT** require users of your APIs to instantiate multiple objects
+in main scenarios. Simple tasks should be done with new statement.
 
-**DO** support so called ”Create-Set-Call” programming style in all Aggregate
-Components. It should be possible to instantiate every component with the
-default constructor, set one or more properties, and call simple methods or
+&#10003; **DO** support so called ”Create-Set-Call” programming style in all
+Aggregate Components. It should be possible to instantiate every component with
+the default constructor, set one or more properties, and call simple methods or
 respond to events.
 
 ```CSharp
@@ -176,68 +179,69 @@ applicationLog.Source = "MySource";
 applicationLog.WriteEntry(exception.Message);
 ```
 
-**DO NOT** require extensive initialization before Aggregate Components can be
-used. If some initialization is necessary, the exception resulting from not
-having the component initialized should clearly explain what needs to be done.
+&#10007; **DO NOT** require extensive initialization before Aggregate Components
+can be used. If some initialization is necessary, the exception resulting from
+not having the component initialized should clearly explain what needs to be
+done.
 
-**DO** carefully choose names for your types, methods, and parameters. Think
-hard about the first name people will try typing in the code editor when they
-explore the feature area. Reserve and use this name for the Aggregate Component.
-A common mistake is to use the ”best” name for a base type. Run FxCop on your
-libraries.
+&#10003; **DO** carefully choose names for your types, methods, and parameters.
+Think hard about the first name people will try typing in the code editor when
+they explore the feature area. Reserve and use this name for the Aggregate
+Component. A common mistake is to use the ”best” name for a base type. Run FxCop
+on your libraries.
 
-**DO** ensure your library is CLS compliant. Apply `CLSCompliantAttribute` to
-your assembly.
+&#10003; **DO** ensure your library is CLS compliant. Apply `CLSCompliantAttribute`
+to your assembly.
 
-**DO** prefer classes over interfaces.
+&#10003; **DO** prefer classes over interfaces.
 
-**DO NOT** seal types unless you have a strong reason to do it.
+&#10007; **DO NOT** seal types unless you have a strong reason to do it.
 
-**DO NOT** create mutable value types.
+&#10007; **DO NOT** create mutable value types.
 
-**DO NOT** ship abstractions (interfaces or abstract classes) without providing
-at least one concrete type implementing each abstraction. This helps to validate
-the interface design.
+&#10007; **DO NOT** ship abstractions (interfaces or abstract classes) without
+providing at least one concrete type implementing each abstraction. This helps
+to validate the interface design.
 
-**DO NOT** ship interfaces without providing at least one API consuming the
-interface (a method taking the interface as a parameter). This helps to validate
-the interface design.
+&#10007; **DO NOT** ship interfaces without providing at least one API consuming
+the interface (a method taking the interface as a parameter). This helps to
+validate the interface design.
 
-**AVOID** public nested types.
+&#10007; **AVOID** public nested types.
 
-**DO** apply `FlagsAttribute` to flag enums.
+&#10003; **DO** apply `FlagsAttribute` to flag enums.
 
-**DO** strongly prefer collections over arrays in public API.
+&#10003; **DO** strongly prefer collections over arrays in public API.
 
-**DO NOT** use `ArrayList`, `List<T>`, `Hashtable`, or `Dictionary<K,V>` in
-public APIs. Use `Collection<T>`, `ReadOnlyCollection<T>`,
+&#10007; **DO NOT** use `ArrayList`, `List<T>`, `Hashtable`, or `Dictionary<K,V>`
+in public APIs. Use `Collection<T>`, `ReadOnlyCollection<T>`,
 `KeyedCollection<K,V>`, or `CollectionBase` subtypes instead. Note that the
 generic collections are only supported in the Framework version 2.0 and above.
 
-**DO NOT** use error codes to report failures. Use Exceptions instead.
+&#10007; **DO NOT** use error codes to report failures. Use Exceptions instead.
 
-**DO NOT** throw `Exception` or `SystemException`.
+&#10007; **DO NOT** throw `Exception` or `SystemException`.
 
-**AVOID** catching the `Exception` base type.
+&#10007; **AVOID** catching the `Exception` base type.
 
-**DO** prefer throwing existing common general purpose exceptions like
+&#10003; **DO** prefer throwing existing common general purpose exceptions like
 `ArgumentNullException`, `ArgumentOutOfRangeException`,
 `InvalidOperationException` instead of defining custom exceptions. throw the
 most specific exception possible.
 
-**DO** ensure that exception messages are clear and actionable.
+&#10003; **DO** ensure that exception messages are clear and actionable.
 
-**DO** use `EventHandler<T>` for events, instead of manually defining event
-handler delegates.
+&#10003; **DO** use `EventHandler<T>` for events, instead of manually defining
+event handler delegates.
 
-**DO** prefer event based APIs over delegate based APIs.
+&#10003; **DO** prefer event based APIs over delegate based APIs.
 
-**DO** prefer constructors over factory methods.
+&#10003; **DO** prefer constructors over factory methods.
 
-**DO NOT** expose public fields. Use properties instead.
+&#10007; **DO NOT** expose public fields. Use properties instead.
 
-**DO** prefer properties for concepts with logical backing store but use methods
-in the following cases:
+&#10003; **DO** prefer properties for concepts with logical backing store but
+use methods in the following cases:
 
 * The operation is a conversion (such as `Object.ToString()`)
 * The operation is expensive (orders of magnitude slower than a field set would
@@ -248,24 +252,25 @@ in the following cases:
 * The member returns an array. Note: Members returning arrays should return
   copies of an internal master array, not a reference to the internal array.
 
-**DO** allow properties to be set in any order. Properties should be stateless
-with respect to other properties.
+&#10003; **DO** allow properties to be set in any order. Properties should be
+stateless with respect to other properties.
 
-**DO NOT** make members virtual unless you have a strong reason to do it.
+&#10007; **DO NOT** make members virtual unless you have a strong reason to do
+it.
 
-**AVOID** finalizers.
+&#10007; **AVOID** finalizers.
 
-**DO** implement `IDisposable` on all types acquiring native resources and those
-that provide finalizers.
+&#10003; **DO** implement `IDisposable` on all types acquiring native resources
+and those that provide finalizers.
 
-**DO** be consistent in the ordering and naming of method parameters. It is
-common to have a set of overloaded methods with an increasing number of
+&#10003; **DO** be consistent in the ordering and naming of method parameters.
+It is common to have a set of overloaded methods with an increasing number of
 parameters to allow the developer to specify a desired level of information.
 
-**DO** make sure all the related overloads have a consistent parameter order
-(same parameter shows in the same place in the signature) and naming pattern.
-The only method in such a group that should be virtual is the one that has the
-most parameters and only when extensibility is needed.
+&#10003; **DO** make sure all the related overloads have a consistent parameter
+order (same parameter shows in the same place in the signature) and naming
+pattern. The only method in such a group that should be virtual is the one that
+has the most parameters and only when extensibility is needed.
 
 ```CSharp
 public class Foo
@@ -290,7 +295,7 @@ public class Foo
 }
 ```
 
-**AVOID** `out` and `ref` parameters.
+&#10007; **AVOID** `out` and `ref` parameters.
 
 # Resources
 
