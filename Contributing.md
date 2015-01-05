@@ -88,7 +88,7 @@ namespace System.Collections.Generic
 
         public ObservableLinkedListNode AddLast(T value) 
         {
-            LinkedListNode<T> newNode = new LinkedListNode<T>(this, value);
+            var newNode = new LinkedListNode<T>(this, value);
 
             InsertNodeBefore(_head, node);
         }
