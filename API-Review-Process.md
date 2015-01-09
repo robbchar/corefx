@@ -1,5 +1,3 @@
-# API Review Process
-
 The .NET Framework has a long standing history of taking API usability extremely seriously. Thus, we generally review every single API that is added to the product. This page discusses how we conduct API reviews for components that are open sourced.
 
 ## Process Goals
