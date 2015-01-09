@@ -8,6 +8,7 @@
  * [Breaking Changes](Breaking Changes)
     * [Definitions](Breaking Change Definitions)
     * [Rules](Breaking Change Rules)
+ * [Performance](Performance)
 
 
 
