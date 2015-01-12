@@ -2,12 +2,14 @@
 
 1. Unless it is a trivial change, make sure that there is a corresponding issue for your change first. If there
    is none, create one.
-2. Create a fork in GitHub
-3. Create a branch off the `master` branch. Name it something that that makes
+2. If your change adds a new API, it's considered non-trivial. Make sure to follow the [[API Review Process]] for 
+   this change.
+3. Create a fork in GitHub
+4. Create a branch off the `master` branch. Name it something that that makes
    sense, such as `issue-123` or `githubhandle-issue`. This makes it easy for everyone to figure out what
    the branch is used for. It also makes it easier to isolate your change from incoming changes from the origin.
-4. Commit your changes and push your changes to GitHub
-5. Create a pull request against the origin's `master` branch
+5. Commit your changes and push your changes to GitHub
+6. Create a pull request against the origin's `master` branch
 
 ## DOs and DON'Ts
 
