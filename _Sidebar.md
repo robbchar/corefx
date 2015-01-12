@@ -1,6 +1,7 @@
 * [Home](Home)
 * [Developer Guide](Developer Guide)
  * [Contributing](Contributing)
+ * [[Contribution License Agreement (CLA)]]
  * [API Review Process](API Review Process)
  * [Framework Design Guidelines Digest](Framework Design Guidelines Digest)
  * [Strong Naming](Strong Naming)
