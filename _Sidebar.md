@@ -1,7 +1,7 @@
 * [[Home]]
 * [[Developer Guide]]
  * [[Contributing]]
- * [[Contribution License Agreement (CLA)]]
+    * [[Contribution License Agreement (CLA)]]
  * [[API Review Process]]
  * [[Framework Design Guidelines Digest]]
  * [[Strong Naming]]
