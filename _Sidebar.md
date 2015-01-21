@@ -5,7 +5,7 @@
  * [[API Review Process]]
  * [[Framework Design Guidelines Digest]]
  * [[Strong Naming]]
-    * [[OSS Signing]]
+    * [[Open Source Signing]]
  * [[Breaking Changes]]
     * [Definitions](Breaking Change Definitions)
     * [Rules](Breaking Change Rules)
