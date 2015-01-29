@@ -61,6 +61,7 @@ As shown above, platforms may be additive, in that an assembly may use functiona
         \mincore
             \Interop.OutputDebugString.cs
 ```
+
 	- If structs/constants will be used on their own without an associated DllImport, or if they may be used with multiple DllImports not in the same file, they should be declared in a separate file.
 	- In the case of multiple overloads of the same DllImport (e.g. some overloads taking a SafeHandle and others taking an IntPtr, or overloads taking different kinds of SafeHandles), if they can’t all be declared in the same file (because they won’t all be consumed by all consumers), the file should be qualified with the key differentiator, e.g.
 ```
