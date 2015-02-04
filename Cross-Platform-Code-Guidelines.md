@@ -1,4 +1,4 @@
-This page provides a FAQ for how we handle cross-platform code in CoreFX. (For structuring of interop code, see [Structuring-Interop-Code].)
+This page provides a FAQ for how we handle cross-platform code in CoreFX. (For structuring of interop code, see [[Structuring-Interop-Code]].)
 
 ### Should assemblies be binary-compatible across platforms (e.g. exact same System.IO.dll on Windows, Linux, and Mac)?
 
