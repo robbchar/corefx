@@ -11,4 +11,5 @@
     * [Rules](Breaking Change Rules)
  * [[Performance]]
  * Code Organization
+    * [[Cross Platform Code Guidelines]]
     * [[Structuring Interop Code]]
