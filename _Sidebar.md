@@ -1,6 +1,6 @@
 * [[Home]]
 * [[Developer Guide]]
-    * [[Supported Operating Systems]
+    * [[Supported Operating Systems]]
  * [[Contributing]]
     * [[Contribution License Agreement (CLA)]]
  * [[API Review Process]]
