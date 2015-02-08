@@ -34,13 +34,13 @@ msbuild
 ```
 
 **NOTE: Running tests from using the VS test explorer does not currently work 
-after we switched to running on CoreCLR.** We will be working on enabling full
-VS test integration but we don't have an ETA yet. 
+after we switched to running on CoreCLR.** 
 
-In the meantime, however, we do have basic test debugging support in Visual
-Studio 2015:
+We will be working on enabling full VS test integration but we don't have an
+ETA yet. In the meantime, however, we do have basic test debugging support in 
+Visual Studio 2015:
 
-1. Install VS 2015 Preview or Later including Web Developer Tools
+1. Install VS 2015 Preview or later including Web Developer Tools
 2. Open solution of interest in VS 2015
 3. Right click test project and select 'Set as startup project'
 4. Set breakpoint appropriately
