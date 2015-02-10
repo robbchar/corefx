@@ -14,4 +14,4 @@
  * Code Organization
     * [[Cross Platform Code Guidelines]]
     * [[Structuring Interop Code]]
-* [[Issues-Guidelines]]
+* [[Issue-Guidelines]]
