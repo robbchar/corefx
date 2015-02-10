@@ -16,4 +16,4 @@ This is the developer wiki for .NET Core Framework repository.
  * Code Organization
     * [[Cross Platform Code Guidelines]]
     * [[Structuring Interop Code]]
-* [[Issue-Guidelines]]
+* [[Issue Guide]]
