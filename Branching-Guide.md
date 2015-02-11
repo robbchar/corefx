@@ -14,7 +14,7 @@ We will have the following branches in the corefx repository:
  * Release branches snapped from master. 
  * Do not submit pull requests to these branches
  * Fixes here do not flow to follow-up releases
- * Generally, fixes needing to make it in to a release will go in to master and get cherry-picked to the release branch.
+ * Generally, fixes after a snap needing to make it in to a release will go in to master and get cherry-picked to the release branch.
 
 * **dev/[name]** 
  * Features (aka topics) under active development by more than one developer.
