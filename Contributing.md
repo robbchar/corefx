@@ -24,6 +24,7 @@
   of time.
 * **DON'T** commit code that you didn't write. If you find MIT or Apache 2 licensed code that you think is a good fit to add to .NET Core, file an issue and start a discussion before proceeding.
 * **DON'T** add API additions without filing an issue and discussing with us first.
+* **DON'T** submit API additions to any type that has shipped in the full .NET framework to the *master* branch. Instead, use the *future* branch. See [Branching Guide].
 
 ## C# Coding Style
 
