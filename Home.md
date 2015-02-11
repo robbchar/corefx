@@ -17,3 +17,4 @@ This is the developer wiki for .NET Core Framework repository.
     * [[Cross Platform Code Guidelines]]
     * [[Structuring Interop Code]]
 * [[Issue Guide]]
+* [[Branching Guide]]
