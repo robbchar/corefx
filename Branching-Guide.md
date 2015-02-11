@@ -7,6 +7,7 @@ We will have the following branches in the corefx repository:
 * **future**
  * Landing place for fully API and code reviewed changes that are not to be part of the next upcoming release.
  * Submit your PRs here if you're adding surface area to a type that has shipped in the full .NET Framework as we can no longer accept those changes and achieve our compatibility goal for the first release of .NET Core
+ * Takes regular merges from master
  * Once we snap for the first release, we will merge future to master and delete future
 
 * **release/[name]**
