@@ -1,6 +1,5 @@
 * [[Home]]
 * [[Developer Guide]]
-    * [[Pull Request Guide]]
     * [[Supported Operating Systems]]
  * [[Contributing]]
     * [[Contribution License Agreement (CLA)]]
@@ -16,3 +15,4 @@
     * [[Cross Platform Code Guidelines]]
     * [[Structuring Interop Code]]
 * [[Issue Guide]]
+* [[Pull Request Guide]]
