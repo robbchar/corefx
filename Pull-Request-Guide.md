@@ -1,6 +1,6 @@
-The following is describing the process for handling PRs  
+The following is describing the steps that are taken to process a PR:
 
-1. The triage group or owner will make sure it is tagged correctly.
+1. The triage group or owner will make sure it is tagged correctly. We are working on publishing an ownership list.
 
 2. The owner will work with the submitter to make sure the bug fix is correct and complete.
 
