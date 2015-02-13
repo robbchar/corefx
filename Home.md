@@ -18,3 +18,4 @@ This is the developer wiki for .NET Core Framework repository.
     * [[Structuring Interop Code]]
 * [[Issue Guide]]
 * [[Branching Guide]]
+* [[Pull Request Guide]]
