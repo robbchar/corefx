@@ -1,5 +1,6 @@
 * [[Home]]
 * [[Developer Guide]]
+    * [[What happens with PRs]]
     * [[Supported Operating Systems]]
  * [[Contributing]]
     * [[Contribution License Agreement (CLA)]]
