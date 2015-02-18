@@ -6,4 +6,4 @@ This is the developer wiki for .NET Core Framework repository. It covers the fol
 
 You can browse the wiki by selecting topics from the sidebar:
 
-[[include:_Sidebar]]
+[[include:_Sidebar.md]]
