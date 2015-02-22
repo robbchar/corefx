@@ -33,7 +33,7 @@ project, e.g.:
 cd src\System.Collections.Immutable\tests
 msbuild /t:BuildAndTest (or /t:Test to just re-run the tests)
 ```
-Also note in some tests directories there are multiple csproj file so you may need to specify which test project you want to run.
+In some test directories there may be multiple test projects or directories so you may need to specify the specific test project to get it to build and run the tests.
 
 ### Running tests from Visual Studio
 
