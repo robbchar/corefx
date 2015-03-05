@@ -21,14 +21,6 @@
 
   <ItemGroup>
     <Compile Include="Properties\InternalsVisibleTo.cs" />
-    <Compile Include="Resources\Strings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.resx</DependentUpon>
-    </Compile>
-    <Compile Include="$(CommonPath)\System\SR.Open.cs">
-      <Link>Common\System\SR.cs</Link>
-    </Compile>
     <Compile Include="System\Diagnostics\Debug.cs" />
     <Compile Include="System\Diagnostics\Debugger.cs" />
     <Compile Include="System\Diagnostics\DebuggerBrowsableAttribute.cs" />
@@ -68,6 +60,9 @@
     <Compile Include="$(CommonPath)\Interop\Unix\libc\Interop.close.cs">
       <Link>Common\Interop\Unix\libc\Interop.close.cs</Link>
     </Compile>
+    <Compile Include="$(CommonPath)\Interop\Unix\libc\Interop.gnu_get_libc_version.cs">
+      <Link>Common\Interop\Unix\Interop.gnu_get_libc_version.cs</Link>
+    </Compile>
     <Compile Include="$(CommonPath)\Interop\Unix\libc\Interop.open.cs">
       <Link>Common\Interop\Unix\libc\Interop.open.cs</Link>
     </Compile>
@@ -86,14 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Strings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources</CustomToolNamespace>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.targets))\dir.targets" />
 </Project>

@@ -149,6 +149,9 @@
     <Compile Include="$(CommonPath)\Interop\Unix\libc\Interop.geteuid.cs">
       <Link>Common\Interop\Unix\Interop.geteuid.cs</Link>
     </Compile>
+    <Compile Include="$(CommonPath)\Interop\Unix\libc\Interop.gnu_get_libc_version.cs">
+      <Link>Common\Interop\Unix\Interop.gnu_get_libc_version.cs</Link>
+    </Compile>
     <Compile Include="$(CommonPath)\Interop\Unix\libc\Interop.getcwd.cs">
       <Link>Common\Interop\Unix\Interop.getcwd.cs</Link>
     </Compile>
@@ -202,7 +205,4 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.targets))\dir.targets" />
-  <ItemGroup>
-    <!--Resource.targets adds the resources associated with the project.-->
-  </ItemGroup>
 </Project>
